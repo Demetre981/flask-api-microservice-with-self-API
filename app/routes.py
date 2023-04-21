@@ -125,6 +125,25 @@ def item_buy(id):
     response = make_response({"urlurl": url, "id": id}, 200)
     return response
 
+@app.route("/about_product/<int:id>")
+def itemm(id):
+    item = session.query(Item).where(Item.id == id).first()
+    title = item.title
+    price = item.price
+    
+    experience = item.experience
+    score = item.score
+    phone = item.phone
+    name = item.name
+    email = item.email
+    specialty = item.specialty
+    description = item.description
+
+
+
+    response = make_response({"title": title, "price": price, "experience": experience, "score": score, "phone": phone, "name": name, "email": email, "specialty": specialty, "description": description, "id": id}, 200)
+    return response
+
 
 
 
