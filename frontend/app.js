@@ -79,8 +79,7 @@ window.onload = (event) => {
         
         
         
-        // .then(data => showEvents(data.data))
-        // logout();
+
         itemForm.addEventListener("submit", (event) => {
             event.preventDefault();
             
@@ -154,30 +153,6 @@ window.onload = (event) => {
     })}
 
 
-    // function getItemForBuy (url) {
-    //     const apiUrlGet = `http://127.0.0.1:5000/${url}`;
-
-    //     return fetch(apiUrlGet, {
-    //         method: "GET",})
-    //       .then(response => response.json())
-
-    //       .catch(error => {
-    //         console.error('Помилка:', error);
-    //       });
-    // }
-
-
-    // function getEventsByDate (date) {
-    //     const apiUrlGet = `http://127.0.0.1:5000/get_events_by_date/${date}`;
-
-    //     return fetch(apiUrlGet, {
-    //         method: "GET",})
-    //       .then(response => response.json())
-
-    //       .catch(error => {
-    //         console.error('Помилка:', error);
-    //       });
-    // }
 
     function getAllItems () {
         const apiUrlGet = `http://127.0.0.1:5000/get_all_items`;
@@ -217,7 +192,6 @@ window.onload = (event) => {
 
     function showItems (data) {
         console.log(data)
-        // const itemsDiv = document.getElementById("display-items");
         const itemsDiv = document.getElementById("display-items");
 
         const containItem = createElementAndAppendChild("div", null, itemsDiv, "container");
@@ -242,9 +216,7 @@ window.onload = (event) => {
             let buttonView = createElementAndAppendChild("a", "View", priceDiv, "btn btn-lg btn-block btn-outline-primary", "button");//  event.id       <a href="/buy/{{ el.id }}" type="button" id="Buybutto" class="btn btn-lg btn-block btn-outline-primary">Buy</a>
             buttonView.setAttribute("data", `id:${event.id}`)
             let button = createElementAndAppendChild("a", "Buy", priceDiv, "btn btn-lg btn-block btn-outline-primary", "button", event.id);//         <a href="/buy/{{ el.id }}" type="button" id="Buybutto" class="btn btn-lg btn-block btn-outline-primary">Buy</a>
-        //     for (let i = 0; i < buyButtons.length; i++) {
-        //         let buyButton = buyButtons[i];
-        //         console.log(buyButton)
+
             const urlBuyItem = 'http://127.0.0.1:5000/buy'
 
             buttonView.addEventListener("click", (event) => {
@@ -425,9 +397,7 @@ window.onload = (event) => {
         const buttonShowDiv = createElementAndAppendChild("div", null, buttonDiv, "card mb-4 mb-md-0");
 
         let button = createElementAndAppendChild("a", "Buy", buttonShowDiv, "btn btn-lg btn-light fw-bold border-blue bg-blue", "button", event.id);//         <a href="/buy/{{ el.id }}" type="button" id="Buybutto" class="btn btn-lg btn-block btn-outline-primary">Buy</a>
-        //     for (let i = 0; i < buyButtons.length; i++) {
-        //         let buyButton = buyButtons[i];
-        //         console.log(buyButton)
+
         const urlBuyItem = 'http://127.0.0.1:5000/buy'
             //
         button.addEventListener("click", (event) => {
